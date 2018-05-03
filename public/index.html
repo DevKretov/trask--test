@@ -1,0 +1,86 @@
+<!--
+This is a sample layout for the application. Feel free to change as you wish, but do not forget to specify your new
+divs and forms with their constants in .js file
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Trask Forms</title>
+        <meta charset="UTF-8">
+
+        <!-- If you want to use the same styles as I use, do not delete these files from the project -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--===============================================================================================-->
+        <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/util.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!--===============================================================================================-->
+    <script src="./javascripts/ak_json_form_generator.js"></script>
+</head>
+<body>
+
+<div class="buttons-row">
+
+    <button id = "json-input-window-button" class="contact0-form-btn" name="testButton">Upload JSON Schema</button>
+    <button id = "generated-form-window-button" class="contact0-form-btn" name="testButton">Generated form</button>
+    <button id = "saved-forms-window-button" class="contact0-form-btn" name="testButton">See the list of forms</button>
+
+</div>
+
+<div class="container-contact100" style="background-image: url('images/bg-01.jpg');">
+    <div id="JSONInputWindow">
+        <div class="wrap-contact200">
+            <span class="contact100-form-title" style="text-align: center;">Enter your JSON schema:</span>
+            <textarea id="json-textarea"
+                      style="width:100%; height: 60vh; background: whitesmoke; padding: 2rem;"
+                      placeholder="Your JSON schema goes here..."></textarea>
+
+            <div class="container-contact100-form-btn">
+                <div class="wrap-contact100-form-btn">
+                    <div class="contact100-form-bgbtn"></div>
+                    <button id="submit-json-schema-button" class="contact100-form-btn">
+                        Submit
+                    </button>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="JSONSavedFormsWindow">
+        <div class="wrap-contact100" id="all-forms-root">
+
+        </div>
+
+    </div>
+
+    <div id="JSONInputResultWindow" style="display: none;">
+        <div class="wrap-contact100">
+            <form id="final-form" class="contact100-form validate-form">
+            </form>
+        </div>
+    </div>
+
+    <div class="wrap-contact200">
+        <span class="contact100-form-title" style="text-align: right; font-size: 0.8em;">Made by Anton Kretov for Trask Solutions</span>
+    </div>
+</div>
+
+</body>
+
+</html>
