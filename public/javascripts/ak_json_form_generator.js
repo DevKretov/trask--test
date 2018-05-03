@@ -180,6 +180,13 @@ function onSubmitFormButtonClick() {
                 case 'checkbox':
                     formJSONObjectToValidate[formInnerInputFields[i].id] = formInnerInputFields[i].checked;
                     break;
+                case 'number':
+                    /* if(isNaN(formInnerInputFields[i].value)) {
+                        alert('Sorry, but there is not a number in the field ' + formInnerInputFields[i].className);
+                        throw 'number parse error';
+                    } */
+                    formJSONObjectToValidate[formInnerInputFields[i].id] = parseInt(formInnerInputFields[i].value);
+                    break;
                 default:
                     formJSONObjectToValidate[formInnerInputFields[i].id] = formInnerInputFields[i].value;
                     break;
@@ -322,6 +329,9 @@ function createNewInputField(jsonInputFieldObject, inputFieldName, fromStorage =
     let inputFieldTitleSpan = document.createElement('span');
     inputFieldTitleSpan.className = 'label-input100';
     inputFieldTitleSpan.setAttribute('htmlFor', inputFieldName);
+
+    // If somebody forgot to specify the name for the input field, use its id
+    if(jsonInputFieldObject['title'] === undefined) jsonInputFieldObject['title'] = inputFieldName;
     inputFieldTitleSpan.innerHTML = jsonInputFieldObject['title'] + ':';
 
     // Add a glorious star to the input field title and make use of HTML5 validation
